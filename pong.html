@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pong - The Ultimate Game</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .top {
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <div>
+                    <canvas id="canvas" width="720" height="480" style="background-color: black;"></canvas>
+                </div>
+                <div>
+                    <canvas id="scoreboard" width="720" height="100" style="background-color: black;"></canvas>
+                </div>
+            </td>
+            <td>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </td>
+            <td class="top">
+                <table>
+                    <tr height="150px">
+                        <td>
+                            <label class="label">KI für Spieler 1 aktivieren:</label><br><br>
+                            <div class="cl-toggle-switch">
+                                <label class="cl-switch">
+                                    <input id="playWithAI" type="checkbox" name="playWithAI" checked>
+                                    <span class="label"></span>
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr height="150px">
+                        <td>
+                            <label class="label">Wähle deine Geschwindigkeit:<br><br></label>
+                            <div class="radio">
+                                
+                                <input id="speed-5" type="radio" name="speed" value="5" />
+                                <label for="speed-5" title="Speed 5">
+                                    <svg viewBox="0 0 576 512" height="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="m 0 50 l 600 220 l -600 220 l 0 -440z"
+                                    ></path>
+                                    </svg>
+                                </label>
+                                
+                                <input id="speed-4" type="radio" name="speed" value="4" />
+                                <label for="speed-4" title="Speed 4">
+                                    <svg viewBox="0 0 576 512" height="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="m 0 50 l 600 220 l -600 220 l 0 -440z"
+                                    ></path>
+                                    </svg>
+                                </label>
+                        
+                                <input id="speed-3" type="radio" name="speed" value="3" />
+                                <label for="speed-3" title="Speed 3">
+                                    <svg viewBox="0 0 576 512" height="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="m 0 50 l 600 220 l -600 220 l 0 -440z"
+                                    ></path>
+                                    </svg>
+                                </label>
+                        
+                                <input id="speed-2" type="radio" name="speed" value="2" />
+                                <label for="speed-2" title="Speed 2">
+                                    <svg viewBox="0 0 576 512" height="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="m 0 50 l 600 220 l -600 220 l 0 -440z"
+                                    ></path>
+                                    </svg>
+                                </label>
+                        
+                                <input id="speed-1" type="radio" name="speed" value="1" checked/>
+                                <label for="speed-1" title="Speed 1">
+                                    <svg viewBox="0 0 576 512" height="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="m 0 50 l 600 220 l -600 220 l 0 -440z"
+                                    ></path>
+                                    </svg>
+                                </label>
+                                &nbsp; 
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr height="150px">
+                        <td>
+                            <label class="label">Lautstärke:<br></label>
+                            <label class="slider">
+                                <input type="range" id="volume" class="level" min="0" max="100" />
+                                <svg class="volume" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve">
+                                    <g>
+                                        <path d="M18.36 19.36a1 1 0 0 1-.705-1.71C19.167 16.148 20 14.142 20 12s-.833-4.148-2.345-5.65a1 1 0 1 1 1.41-1.419C20.958 6.812 22 9.322 22 12s-1.042 5.188-2.935 7.069a.997.997 0 0 1-.705.291z" fill="currentColor" data-original="#000000"></path>
+                                        <path d="M15.53 16.53a.999.999 0 0 1-.703-1.711C15.572 14.082 16 13.054 16 12s-.428-2.082-1.173-2.819a1 1 0 1 1 1.406-1.422A6 6 0 0 1 18 12a6 6 0 0 1-1.767 4.241.996.996 0 0 1-.703.289zM12 22a1 1 0 0 1-.707-.293L6.586 17H4c-1.103 0-2-.897-2-2V9c0-1.103.897-2 2-2h2.586l4.707-4.707A.998.998 0 0 1 13 3v18a1 1 0 0 1-1 1z" fill="currentColor" data-original="#000000"></path>
+                                    </g>
+                                </svg>
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table >
+    
+    <script src="pong.js"></script>
+</body>
+</html>

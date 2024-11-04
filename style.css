@@ -1,0 +1,315 @@
+.label {
+    color:#ff9e0b;   /* Farbe */
+    font-size:24pt;  /* Größe 28pt   */
+    font-family:arial, "lucida console", sans-serif; /* Schriftart */
+}
+
+
+/* From Uiverse.io by lenin55 */ 
+.cl-toggle-switch {
+    position: relative;
+}
+
+.cl-switch {
+    position: relative;
+    display: inline-block;
+}
+/* Input */
+.cl-switch > input {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    z-index: -1;
+    position: absolute;
+    right: 6px;
+    top: -8px;
+    display: block;
+    margin: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(0, 0, 0, 0.38);
+    outline: none;
+    opacity: 0;
+    transform: scale(1);
+    pointer-events: none;
+    transition: opacity 0.3s 0.1s, transform 0.2s 0.1s;
+}
+/* Track */
+.cl-switch > span::before {
+    content: "";
+    float: right;
+    display: inline-block;
+    margin: 5px 0 5px 10px;
+    border-radius: 7px;
+    width: 36px;
+    height: 14px;
+    background-color: rgb(0, 0, 0, 0.38);
+    vertical-align: top;
+    transition: background-color 0.2s, opacity 0.2s;
+}
+/* Thumb */
+.cl-switch > span::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    right: 16px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    transition: background-color 0.2s, transform 0.2s;
+}
+/* Checked */
+.cl-switch > input:checked {
+    right: -10px;
+    background-color: #f5b350;
+}
+
+.cl-switch > input:checked + span::before {
+    background-color: #f5b350;
+}
+
+.cl-switch > input:checked + span::after {
+    background-color: #ff9e0b;
+    transform: translateX(16px);
+}
+/* Hover, Focus */
+.cl-switch:hover > input {
+    opacity: 0.04;
+}
+
+.cl-switch > input:focus {
+    opacity: 0.12;
+}
+
+.cl-switch:hover > input:focus {
+    opacity: 0.16;
+}
+/* Active */
+.cl-switch > input:active {
+    opacity: 1;
+    transform: scale(0);
+    transition: transform 0s, opacity 0s;
+}
+
+.cl-switch > input:active + span::before {
+    background-color: #8f8f8f;
+}
+
+.cl-switch > input:checked:active + span::before {
+    background-color: #f5b350;
+}
+/* Disabled */
+.cl-switch > input:disabled {
+    opacity: 0;
+}
+
+.cl-switch > input:disabled + span::before {
+    background-color: #ddd;
+}
+
+.cl-switch > input:checked:disabled + span::before {
+    background-color: #bfdbda;
+}
+
+.cl-switch > input:checked:disabled + span::after {
+    background-color: #61b5b4;
+}
+
+
+/* From Uiverse.io by LeonKohli */ 
+.radio {
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+    flex-direction: row-reverse;
+}
+
+.radio > input {
+    position: absolute;
+    appearance: none;
+}
+
+.radio > label {
+    cursor: pointer;
+    font-size: 30px;
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.radio > label > svg {
+    fill: #666;
+    transition: fill 0.3s ease;
+}
+
+.radio > label::before,
+.radio > label::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: #ff9e0b;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0);
+    transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+    animation: particle-explosion 1s ease-out;
+}
+
+.radio > label::before {
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+}
+
+.radio > label::after {
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+}
+
+.radio > label:hover::before,
+.radio > label:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.5);
+}
+
+.radio > label:hover {
+    transform: scale(1.2);
+    animation: pulse 0.6s infinite alternate;
+}
+
+.radio > label:hover > svg,
+.radio > label:hover ~ label > svg {
+    fill: #ff9e0b;
+    filter: drop-shadow(0 0 15px rgba(255, 158, 11, 0.9));
+    animation: shimmer 1s ease infinite alternate;
+}
+
+.radio > input:checked + label > svg,
+.radio > input:checked + label ~ label > svg {
+    fill: #ff9e0b;
+    filter: drop-shadow(0 0 15px rgba(255, 158, 11, 0.9));
+    animation: pulse 0.8s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+    transform: scale(1);
+    }
+    100% {
+    transform: scale(1.1);
+    }
+}
+
+@keyframes particle-explosion {
+    0% {
+    opacity: 0;
+    transform: scale(0.5);
+    }
+    50% {
+    opacity: 1;
+    transform: scale(1.2);
+    }
+    100% {
+    opacity: 0;
+    transform: scale(0.5);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+    filter: drop-shadow(0 0 10px rgba(255, 158, 11, 0.5));
+    }
+    100% {
+    filter: drop-shadow(0 0 20px rgba(255, 158, 11, 1));
+    }
+}
+
+.radio > input:checked + label:hover > svg,
+.radio > input:checked + label:hover ~ label > svg {
+    fill: #e58e09;
+}
+
+.radio > label:hover > svg,
+.radio > label:hover ~ label > svg {
+    fill: #ff9e0b;
+}
+
+.radio input:checked ~ label svg {
+    fill: #ffa723;
+}
+    
+
+/* From Uiverse.io by Galahhad */ 
+/* level settings 👇 */
+
+.slider {
+  /* slider */
+  --slider-width: 100%;
+  --slider-height: 6px;
+  --slider-bg: rgb(82, 82, 82);
+  --slider-border-radius: 999px;
+  /* level */
+  --level-color: #ff9e0b;
+  --level-transition-duration: .1s;
+  /* icon */
+  --icon-margin: 15px;
+  --icon-color: var(--slider-bg);
+  --icon-size: 25px;
+}
+
+.slider {
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.slider .volume {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: var(--icon-margin);
+  color: var(--icon-color);
+  width: var(--icon-size);
+  height: auto;
+}
+
+.slider .level {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: var(--slider-width);
+  height: var(--slider-height);
+  background: var(--slider-bg);
+  overflow: hidden;
+  border-radius: var(--slider-border-radius);
+  -webkit-transition: height var(--level-transition-duration);
+  -o-transition: height var(--level-transition-duration);
+  transition: height var(--level-transition-duration);
+  cursor: inherit;
+}
+
+.slider .level::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0;
+  height: 0;
+  -webkit-box-shadow: -200px 0 0 200px var(--level-color);
+  box-shadow: -200px 0 0 200px var(--level-color);
+}
+
+.slider:hover .level {
+  height: calc(var(--slider-height) * 2);
+}
